@@ -1,22 +1,21 @@
 {
   "inbounds": [
     {
-      "port": 8080,
-      "listen": "0.0.0.0",
+      "port": ${PORT},
       "protocol": "vless",
       "settings": {
         "clients": [
           {
-            "id": "047c8d56-ba80-434d-a336-8392c72daa5a"
+            "id": "047c8d56-ba80-434d-a336-8392c72daa5a",
+            "level": 0
           }
         ],
         "decryption": "none"
       },
       "streamSettings": {
         "network": "grpc",
-        "security": "none",
         "grpcSettings": {
-          "serviceName": "grpc"
+          "serviceName": "grpc-service"
         }
       }
     }
