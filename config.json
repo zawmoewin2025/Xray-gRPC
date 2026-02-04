@@ -1,23 +1,20 @@
 {
-  "log": {
-    "loglevel": "warning"
-  },
   "inbounds": [
     {
-      "port": 443,
+      "port": 8080,
+      "listen": "0.0.0.0",
       "protocol": "vless",
       "settings": {
         "clients": [
           {
-            "id": "047c8d56-ba80-434d-a336-8392c72daa5a",
-            "flow": ""
+            "id": "047c8d56-ba80-434d-a336-8392c72daa5a"
           }
         ],
         "decryption": "none"
       },
       "streamSettings": {
         "network": "grpc",
-        "security": "tls",
+        "security": "none",
         "grpcSettings": {
           "serviceName": "grpc"
         }
@@ -26,8 +23,7 @@
   ],
   "outbounds": [
     {
-      "protocol": "freedom",
-      "settings": {}
+      "protocol": "freedom"
     }
   ]
 }
