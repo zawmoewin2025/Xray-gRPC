@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add --no-cache ca-certificates curl unzip
+RUN apk add --no-cache ca-certificates curl unzip gettext
 
 WORKDIR /app
 
@@ -10,8 +10,7 @@ RUN curl -L -o xray.zip https://github.com/XTLS/Xray-core/releases/latest/downlo
     && chmod +x xray \
     && rm -f xray.zip
 
-COPY config.json /app/config.json
+COPY config.json /app/config.template.json
 
-EXPOSE 443
-
-CMD ["./xray", "run", "-config", "/app/config.json"]
+# Railway ရဲ့ PORT ကို config ထဲ ထည့်သွင်းပြီး run မယ်
+CMD envsubst < /app/config.template.json > /app/config.json && ./xray run -config /app/config.json
