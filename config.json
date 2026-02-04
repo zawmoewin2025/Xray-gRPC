@@ -8,8 +8,12 @@
     },
     "streamSettings": {
       "network": "tcp",
-      "wsSettings": {"path": "/railway"}
+      "wsSettings": {
+        "path": "/railway-vless"
+      }
     }
   }],
-  "outbounds": [{"protocol": "freedom"}]
+  "outbounds": [{
+    "protocol": "freedom"
+  }]
 }
